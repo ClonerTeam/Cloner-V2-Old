@@ -1,0 +1,35 @@
+{
+  "name": "guildcopy",
+  "version": "0.0.1",
+  "description": "A tool to copy a discord guild",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Jisagi",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "artillery": "^1.6.0-29",
+    "btoa": "^1.2.1",
+    "chalk": "^2.4.1",
+    "cookies": "^0.7.3",
+    "dateformat": "^3.0.3",
+    "discord.js": "git://github.com/hydrabolt/discord.js.git#master",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.0.0",
+    "express-session": "^1.16.2",
+    "https-proxy-agent": "^2.2.3",
+    "mysql": "^2.17.1",
+    "mysql2": "^2.1.0",
+    "node-fetch": "^2.6.0",
+    "passport": "^0.4.0",
+    "passport-discord": "^0.1.3",
+    "passport-oauth2-refresh": "^1.1.0",
+    "pm2": "^4.0.0",
+    "proxy-checker": "^1.0.0",
+    "request-promise": "^4.2.4",
+    "sequelize": "^5.21.3",
+    "snekfetch": "^4.0.4"
+  }
+}
