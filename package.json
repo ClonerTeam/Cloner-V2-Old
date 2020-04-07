@@ -1,12 +1,12 @@
 {
-  "name": "guildcopy",
+  "name": "ClonerTech",
   "version": "0.0.1",
   "description": "A tool to copy a discord guild",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
-  "author": "Jisagi",
+  "author": "Niroxy",
   "license": "GPL-3.0",
   "dependencies": {
     "artillery": "^1.6.0-29",
