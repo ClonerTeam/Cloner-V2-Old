@@ -1,0 +1,7 @@
+{
+    "default" : {
+        "client_id": "client id",
+        "client_secret": "client secret",
+        "client_callback": "https://cloner.tech/auth/callback"
+    }
+}
