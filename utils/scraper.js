@@ -4,7 +4,7 @@ var scrapeProxies = new Promise((resolve, reject) => {
 	
 	request({
 		method: "GET",
-		url: "https://api.proxyscrape.com/?request=displayproxies&proxytype=http&timeout=100&anonymity=transparent&ssl=yes"
+		url: "https://www.proxy-list.download/api/v1/get?type=http"
 	}, (errror, response, body) => {
 		if (body) {
 			return resolve(body.split("\n"));
