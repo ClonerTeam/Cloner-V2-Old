@@ -346,7 +346,7 @@ class Creator {
                 let textChs = newGuild.channels.filter(c => c.type === 'text');
 
 
-                let outText = ` \`\`\`css\n[▇▇▇▇▇▇▇▇▇▇▇▇▇▇] 100%\n\`\`\` `+`\n**Le clone a été injecté avec succès !!**\n\n__By **${client.user.username}**__ & __**Cloner.Tech**__\n\nFonction propulsée par: **Niroxy#7160**`;
+                let outText = ` \`\`\`css\n[▇▇▇▇▇▇▇▇▇▇▇▇▇▇] 100%\n\`\`\` `+`\n**Le clone a été injecté avec succès !!**\n\n__By **${client.user.username}**__ & __**Cloner.Tech**__\n\nFonction propulsée par: **Niroxy#0001**`;
                 if (textChs.size > 0) await textChs.first().send(`${outText} @everyone `);
 				
 				setTimeout(async() => {
