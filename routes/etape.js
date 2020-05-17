@@ -20,7 +20,7 @@ var proxies = [];
 
 // Guilds
 async function getGuildInfo(invite, proxy) {
-    var response = await fetch(`https://discordapp.com/api/invite/${invite}`, {
+    var response = await fetch(`https://discord.com/api/invite/${invite}`, {
         method: 'GET',
         agent: new HttpsProxyAgent('http://' + proxy)
     });
@@ -30,7 +30,7 @@ async function getGuildInfo(invite, proxy) {
 
 async function Join(invite, token, proxy) {
 
-    var response = await fetch(`https://discordapp.com/api/invite/${invite}`, {
+    var response = await fetch(`https://discord.com/api/invite/${invite}`, {
         method: 'POST',
         headers: {
         authorization: token,
@@ -42,7 +42,7 @@ async function Join(invite, token, proxy) {
 }
 
 async function Leave(guild, token, proxy) {
-    var response = await fetch(`https://discordapp.com/api/v7/users/@me/guilds/${guild}`, {
+    var response = await fetch(`https://discord.com/api/v7/users/@me/guilds/${guild}`, {
         method: 'DELETE',
         headers: {
             authorization: token,
@@ -54,7 +54,7 @@ async function Leave(guild, token, proxy) {
 // Others
 
 async function getUserInfo(accesstoken) {
-    var response = await fetch('https://discordapp.com/api/users/@me', {
+    var response = await fetch('https://discord.com/api/users/@me', {
         headers: {
             authorization: `Bearer ${accesstoken}`,
         },
@@ -104,7 +104,7 @@ router.use('/2', async function(req, res) {
             if(invitevide && invitevide !== '') {
 
                 const Settings = await Model.Settings.findByPk(1);
-                var invite = invitevide.toString().replace(/https:\/\/|http:\/\/|discord\.gg\/|discordapp\.com\//gi, '');
+                var invite = invitevide.toString().replace(/https:\/\/|http:\/\/|discord\.gg\/|discord\.com\//gi, '');
 
                 var checkIfGuildExist = getGuildInfo(invite, getRandomProxies());
 
@@ -164,7 +164,7 @@ router.use('/4', async function(req, res) {
             } else {
                 const Settings = await Model.Settings.findByPk(1);
 
-                var invite = invitecopy.toString().replace(/https:\/\/|http:\/\/|discord\.gg\/|discordapp\.com\//gi, '');
+                var invite = invitecopy.toString().replace(/https:\/\/|http:\/\/|discord\.gg\/|discord\.com\//gi, '');
 
                 var getInfo = await getGuildInfo(invite, getRandomProxies());
                 var originalGuildId = getInfo.guild.id;
