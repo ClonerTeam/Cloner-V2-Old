@@ -10,7 +10,7 @@ var fs = require('fs');
 var dateformat = require('dateformat')
 
 async function getUserInfo(accesstoken) {
-    var response = await fetch('https://discordapp.com/api/users/@me', {
+    var response = await fetch('https://discord.com/api/users/@me', {
         headers: {
             authorization: `Bearer ${accesstoken}`,
         },
@@ -68,7 +68,7 @@ async function checkClone(access_token, callback) {
 }
 
 async function checkDiscordToken(token){
-    var response = await fetch('https://discordapp.com/api/users/@me', {
+    var response = await fetch('https://discord.com/api/users/@me', {
         headers: {
             authorization: token,
         },
@@ -80,7 +80,7 @@ async function checkDiscordToken(token){
         return 'token is invalid';
     } else {
 
-        var AccountIsVerified = await fetch('https://discordapp.com/api/v6/applications/trending/global?token=' + token);
+        var AccountIsVerified = await fetch('https://discord.com/api/v6/applications/trending/global?token=' + token);
         var VerifJson = await AccountIsVerified.json();
 
         if(body.verified == false) {
