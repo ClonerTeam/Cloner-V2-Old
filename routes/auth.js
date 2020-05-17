@@ -11,7 +11,7 @@ router.get('/', function(req, res) {
 router.get('/login', async function(req, res) {
     Models.Settings.findAll().then(function (result) {
         res.redirect(
-            'https://discordapp.com/api/oauth2/authorize' +
+            'https://discord.com/api/oauth2/authorize' +
             '?client_id=' + result[0].client_id +
             '&redirect_uri=' + encodeURIComponent(result[0].client_callback) +
             `&response_type=code` +
@@ -28,7 +28,7 @@ router.get('/callback', async function(req, res) {
 
     Models.Settings.findAll().then(async function (result) {
         const creds = btoa(`${result[0].client_id}:${result[0].client_secret}`);
-        const response = await fetch(`https://discordapp.com/api/oauth2/token?grant_type=authorization_code&code=${code}&redirect_uri=${encodeURIComponent(result[0].client_callback)}`, 
+        const response = await fetch(`https://discord.com/api/oauth2/token?grant_type=authorization_code&code=${code}&redirect_uri=${encodeURIComponent(result[0].client_callback)}`, 
             {
             method: 'POST',
             headers: {
