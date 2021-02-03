@@ -1,9 +1,9 @@
 # Cloner.Tech-V2
 
 
-Don't steal the code of the original creator, his Discord Tag: Niroxy#1337
+Don't steal the code of the original creator, his Discord Tag: Niroxy#1770
 <br>
-Ne volez pas le code du créateur original, son Tag Discord: Niroxy#1337
+Ne volez pas le code du créateur original, son Tag Discord: Niroxy#1770
 
 <br><br>
 No updates will be performed and we do not offer installation or other assistance.
