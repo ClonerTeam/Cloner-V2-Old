@@ -29,7 +29,7 @@
     "pm2": "^4.0.0",
     "proxy-checker": "^1.0.0",
     "request-promise": "^4.2.4",
-    "sequelize": "^5.21.3",
+    "sequelize": "^6.28.2",
     "snekfetch": "^4.0.4",
     "lodash": ">=4.17.19"
   }
